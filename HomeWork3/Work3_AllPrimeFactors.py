@@ -15,4 +15,4 @@ def findPrimeFactors(num):
 
 
 n = int(input("Введите натуральное число: "))
-print('{0} = {1}' .format(n, findPrimeFactors(n))) 
+print('{0} = {1}' .format(n, findPrimeFactors(n)))
