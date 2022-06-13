@@ -1,21 +1,23 @@
 # Создать и заполнить файл случайными целыми значениями.
 # Выполнить сортировку содержимого файла по возрастанию.
 
-import random
+from random import randint
 
-def sorting(lowLimit, highlimit, number):
-    x = []
-    for i in range(number):
-        x.append(random.randint(lowLimit, highlimit))
-    print(x)
+lst = [randint(0, 100) for i in range(20)]
+print(lst)
 
-    x.sort()
-    print(x)
+f = open("RandomNum.txt", 'w')
+f.write(' '.join(map(str, lst)))
+f.close()
 
-a = int(input('Введите нижнюю границу : '))
-b = int(input('Введите верхнюю границу : '))
-c = int(input('Введите количество элементов : '))
+lst = []
+f = open("RandomNum.txt", 'r')
+rd = f.read()
+lst = list(map(int, rd.split()))
+lst.sort()
+f.close()
 
-sorting(a, b, c)
-
+f = open("RandomNum.txt", 'w')
+f.write(' '.join(map(str, lst)))
+f.close()
 
